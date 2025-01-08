@@ -1,0 +1,7 @@
+- name : Nginx playbook
+  hosts: web
+  tasks:
+  - name: INSTALL NGINX
+    service:
+     name: nginx
+     state: started
