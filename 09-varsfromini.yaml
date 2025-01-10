@@ -1,0 +1,7 @@
+- name: "Fetching Var values from inventory"
+  hosts: local
+  connection: local
+  tasks:
+  - name: "PRINTING VALUES THAT ARE FETCHED FROM INI"
+    ansible.builtin.debug:
+      msg: "I AM {{NAME}},I AM {{AGE}} AND I AM {{JOB}}"
