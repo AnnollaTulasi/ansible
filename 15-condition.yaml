@@ -1,17 +1,19 @@
 - name: conditions in ansible
   hosts: local
   connection: local
-  vars_prompt:
-  - name: number
-    prompt: Please enter the number
-    private : false
+  vars:
+    number:5
+  # vars_prompt:
+  # - name: number
+  #   prompt: Please enter the number
+  #   private : false
   tasks:
   - name: Check whether number is greater than 10 
     ansible.builtin.debug:
       msg: "the number {{number}} is greater than 10"
     when: number > 10
 
-  # - name: Check whether the number is less than or equal to 10
-  #   ansible.builtin.debug:
-  #     msg: "the number {{number}} is less than 10"
-  #   when: number <= 10
+  - name: Check whether the number is less than or equal to 10
+    ansible.builtin.debug:
+      msg: "the number {{number}} is less than 10"
+    when: number <= 10
