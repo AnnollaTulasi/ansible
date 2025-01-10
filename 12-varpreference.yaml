@@ -8,9 +8,18 @@
   vars_prompt:
   - name: GREET
     prompt: Enter the value
+    private: false #The value entered will be visible else it will not appear
   tasks:
   - name: Play At ask
     vars:
       GREET: "TAST"
     ansible.builtin.debug:
       msg: " GREET Priority Testing {{GREET}}"
+
+#1.ARG
+#2.TASK
+#3.FILES
+#4.PROMPT
+#5.GLOBAL VAR
+#6.INVENTORY
+#7.ROLE
