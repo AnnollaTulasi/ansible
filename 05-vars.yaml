@@ -1,7 +1,11 @@
 - name: variables
   hosts: local
   connection: local
+  vars:
+    NAME: "TUALSI"
+    AGE: "24YRS"
+    JOB: "SOFTWARE ENGINEER"
   tasks:
   - name: print the variable
     ansible.builtin.debug:
-      msg: "Ansible 2 day training"
+      msg: "My Name is {{ NAME }} AND I AM {{ AGE }},I AM WORKING AS A {{ JOB }}"
