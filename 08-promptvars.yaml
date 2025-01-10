@@ -11,5 +11,5 @@
   tasks:
   - name: "Print values of vars fetched from prompt"
     ansible.builtin.debug:
-      msg: "I AM {{NAME}},I AM {{YEARS}} THIS YEAR AND I AM WORKING AS {{JOB}}"
+      msg: "I AM {{NAME}},I AM {{AGE}} THIS YEAR AND I AM WORKING AS {{JOB}}"
 
