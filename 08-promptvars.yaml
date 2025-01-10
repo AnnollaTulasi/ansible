@@ -3,11 +3,11 @@
   connection: local
   vars_prompt:
   - name: NAME
-      prompt: "Enter NAME"
+      prompt: Enter NAME
   - name: AGE
-      prompt: "Please enter the AGE"
+      prompt: Please enter the AGE
   - name: JOB
-      prompt: "Enter the JOB WHICH YOU ARE DOING"
+      prompt: Enter the JOB WHICH YOU ARE DOING
   tasks:
   - name: "Print values of vars fetched from prompt"
     ansible.builtin.debug:
