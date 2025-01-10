@@ -2,14 +2,14 @@
   hosts: local
   connection: local
   vars_prompt:
-    - name: NAME
+  - name: NAME
       prompt: "Enter NAME"
-    - name: AGE
+  - name: AGE
       prompt: "Please enter the AGE"
-    - name: JOB
+  - name: JOB
       prompt: "Enter the JOB WHICH YOU ARE DOING"
   tasks:
-    - name: Print values of vars fetched from prompt
-      ansible.builtin.debug:
-        - msg: "I AM {{NAME}},I AM {{YEARS}} THIS YEAR AND I AM WORKING AS {{JOB}}"
+  - name: "Print values of vars fetched from prompt"
+    ansible.builtin.debug:
+      - msg: "I AM {{NAME}},I AM {{YEARS}} THIS YEAR AND I AM WORKING AS {{JOB}}"
 
