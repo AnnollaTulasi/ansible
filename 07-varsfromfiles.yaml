@@ -1,0 +1,9 @@
+- name: "VARS FROM FILES"
+  hosts: local
+  connection: local
+  vars_files:
+  - varvalues.yaml
+  tasks:
+    - name: print variable values which are fetched from a file
+      ansible.builtin.debug:
+        msg: "I AM {{NAME}} ,I AM {{AGE}} , AND I AM WORKING AS A {{JOB}}"
