@@ -1,0 +1,7 @@
+- name: "Having different vars for each server"
+  hosts: web
+  connection: local
+  tasks:
+  - name: "Printing different values for different servers"
+    ansible.builtin.debug:
+      msg: "I AM {{NAME}},I'M {{AGE}} AND {{JOB}}"
