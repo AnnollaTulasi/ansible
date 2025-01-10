@@ -1,8 +1,10 @@
 - name: conditions in ansible
   hosts: local
   connection: local
-  vars:
-    number: 15
+  vars_prompt:
+  - name: number
+    prompt: Please enter the number
+    private : false
   tasks:
   - name: Check whether number is greater than 10 
     ansible.builtin.debug:
