@@ -1,0 +1,7 @@
+- name: Having values as ARGS
+  hosts: local
+  connection: local
+  tasks:
+  - name: Getting values from args
+    ansible.builtin.debug:
+      msg: "I am LEARNING {{COURSE}},AND It is FOR {{DAYS}} WHICH iS TAUGHT BY {{TRAINER}}"
