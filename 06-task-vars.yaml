@@ -1,0 +1,19 @@
+- name: PLAY1
+  hosts: local
+  connection: local
+  vars:
+    NAME: "TULASI"
+    AGE: "24YRS"
+    JOB: "SOFTWARE ENGINEER"
+  tasks:
+    - name: TASK1
+      vars:
+        JOB: "A BILLIONIARE"
+      ansible.builtin.debug:
+        msg: " I am {{ NAME }} ,I AM {{ AGE }} AND  I AM {{ JOB }}"
+    
+    - name: TASK2
+      ansible.builtin.debug:
+        msg: " I am {{ NAME }} ,I AM {{ AGE }} AND  I AM {{ JOB }}"
+
+    
