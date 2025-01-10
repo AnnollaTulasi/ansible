@@ -1,7 +1,7 @@
 - name: variables
   hosts: local
   connection: local
-  vars:
+  vars: #Play level vars
     NAME: "TUALSI"
     AGE: "24YRS"
     JOB: "SOFTWARE ENGINEER"
