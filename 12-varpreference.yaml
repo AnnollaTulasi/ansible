@@ -1,0 +1,16 @@
+- name: Variable preferences
+  hosts: local
+  connection: local
+  vars:
+    GREET: PLAY
+  vars_files:
+  - varvalues.yaml
+  vars_prompt:
+  - name: GREET
+    prompt: Enter the value
+  tasks:
+  - name: Play At ask
+    vars:
+      GREET: "TAST"
+    ansible.builtin.debug:
+      msg: " GREET Priority Testing {{GREET}}"
