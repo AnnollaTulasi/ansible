@@ -29,3 +29,22 @@
       - {'key': 'trainer', 'value': 'sivakumar'}
     ansible.builtin.debug:
       msg: "Coverting list to map  : {{ course | items2dict }}"
+
+  - name: convert upper to lower
+    vars:
+      name: "Tulasi Annolla"
+    ansible.builtin.debug:
+      msg: "convert to lower: {{ name | lower }}"
+    
+  - name: Convert to upper
+    vars:
+      name: "Tulasi Annolla"
+    ansible.builtin.debug:
+      msg: "Convert to upper : {{ name | upper }}"
+
+  
+  - name : find min and max
+    vars:
+      numbers: [3,6,9,2345]
+    ansible.builtin.debug:
+      msg: "min is :{{ numbers | min }} , max is {{ numbers | max }}
