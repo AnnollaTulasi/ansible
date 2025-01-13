@@ -5,10 +5,10 @@
   - name : "installing packages"
     ansible.builtin.packages:
       name: "Installing {{ item }}"
-  loop:
-  - gcc
-  - nginx
-  - git
-  - zip
-  - mysql
-  
+    loop:
+      - gcc
+      - nginx
+      - git
+      - zip
+      - mysql
+
