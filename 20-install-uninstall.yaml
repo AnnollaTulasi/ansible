@@ -2,7 +2,7 @@
   hosts: local
   tasks:
   - name: Install and uninstall
-    ansible.builin.package:
+    ansible.builtin.package:
       name: "{{ item.name }}"
       state: "{{ item.state }}"
     loop:
