@@ -27,3 +27,13 @@
       image_id: "{{ ami_id }}"
       instance_type: "{{ instance_type }}"
     loop: "{{ instances }}"
+    register : ec2_info
+
+    - name: print Ec2_info
+      ansible.builtin.debug:
+        msg: "{{ ec2_info }}"
+
+    - name: print private ip 
+      ansible.builtin.debug:
+        msg:"{{ item.instances[0].private_ip_address }}"
+      loop: "{{ ec2_info.results}}"
