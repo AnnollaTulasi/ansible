@@ -13,9 +13,12 @@
   tasks:
   - name: install python packages
     ansible.builtin.pip:
-      name:
-      - boto3
-      - botocore
+      name: "{{ item }}"
+      executable: pip3.9
+    loop:
+    - boto3
+    - botocore
+      
   tasks:
   - name: create ec2 instanses
     amazon.aws.ec2_instance:
