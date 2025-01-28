@@ -10,6 +10,7 @@
     - frontend
     ami_id: ami-09c813fb71547fc4f
     instance_type: t2.micro
+    zone: tulasi.site
   tasks:
   - name: install python packages
     ansible.builtin.pip:
@@ -37,3 +38,31 @@
     ansible.builtin.debug:
       msg: "{{ item.instances[0].private_ip_address }}"
     loop: "{{ ec2_info.results}}"
+
+  - name: cretae private route 53
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ item.item}}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_info.results}}"
+
+
+ - name: cretae public ip for frontend
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].public_ip_address }}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_info.results}}"
+    when: item.item == "frontend"
+
+
